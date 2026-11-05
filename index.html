@@ -12,7 +12,6 @@
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *,*::before,*::after{box-sizing:inherit}
 body{--bg:#f8f0e1;--fg:#2b2018;--muted:#7b6a58;--accent:#c4502a;--card:#fff8ea;--line:#e8d8bd;margin:0;background:var(--bg);color:var(--fg);font-family:'Lora',Georgia,'Times New Roman',serif;line-height:1.8;font-size:1.1rem;-webkit-text-size-adjust:100%}
-@media (prefers-color-scheme:dark){body[data-v=inicio]{--bg:#1c1511;--fg:#f1e6d3;--muted:#b3a38e;--accent:#f08a5d;--card:#271d17;--line:#3a2d24}}
 body[data-v=hora]{--fg:#e6f0ea;--muted:#8fb3ad;--accent:#52d6c3;--line:#1d4b50;background:linear-gradient(180deg,#0a1f2c 0,#0f3a40 55%,#17574f 100%) fixed;background-color:#0f3a40;line-height:1.95;font-size:1.15rem}
 body[data-v=valle]{--fg:#1d2b27;--muted:#5d6b62;--accent:#0f766e;--card:#fbf5e4;--line:#d9c9a3;background:linear-gradient(#f1e6cb,#e9dcb8);background-color:#f1e6cb}
 body[data-v=herencia]{--bg:#f5f0e6;--fg:#1a1a1a;--muted:#5f5a50;--accent:#b3202a;--card:#fff;--line:#d6cfc0}
@@ -49,24 +48,69 @@ article h2{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:va
 .nota p{margin:0 0 .9rem}.nota p:last-child{margin:0}
 footer{margin-top:4rem;font-size:.85rem;color:var(--muted);text-align:center}
 .view{display:none}.view.on{display:block}
+body[data-v=inicio]{--bg:#f2e8d0;--fg:#1b1813;--muted:#5d5545;--accent:#b3441f;--line:#1b1813}
+.mast{border-top:4px double var(--fg);border-bottom:4px double var(--fg);padding:0 0 .9rem;margin-bottom:1.4rem;text-align:center}
+.mast .top{display:flex;justify-content:space-between;font:600 .7rem/1 'Fraunces',Georgia,serif;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--fg);padding:.6rem 0;margin-bottom:.9rem}
+.mast h1{font-size:clamp(2.7rem,14vw,4.8rem);text-transform:uppercase;letter-spacing:.04em;line-height:1;margin:0}
+.mast p{margin:.4rem 0 0;font-style:italic;color:var(--muted);font-size:.95rem}
+.lead,.story{display:block;text-decoration:none;color:inherit}
+.lead{border-bottom:3px double var(--fg);padding-bottom:1.4rem;margin-bottom:1.4rem}
+.lead h2{font-size:clamp(2.2rem,10vw,3.5rem);line-height:1.05;margin:.7rem 0 .4rem}
+.deck{font-style:italic;font-size:1.25rem;color:var(--muted);margin:0 0 .9rem;line-height:1.4}
+.ex{margin:0 0 .9rem;border-top:1px solid var(--fg);padding-top:.8rem}
+.tag{display:inline-block;background:#0f766e;color:#fff;font:600 .7rem/1 'Fraunces',Georgia,serif;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .55rem}
+[data-c=hora] .tag{background:#0f3a40}[data-c=herencia] .tag{background:#b3202a}
+.go{font:700 .95rem 'Fraunces',Georgia,serif;color:var(--accent)}
+.cols{display:grid;gap:1.4rem}
+.story+.story{border-top:1px solid var(--fg);padding-top:1.2rem}
+.story h3{font:700 1.7rem/1.15 'Fraunces',Georgia,serif;margin:.6rem 0 .5rem}
+.story p{margin:0 0 .7rem;font-size:1rem;line-height:1.55;color:var(--muted)}
+.lead:hover h2,.story:hover h3{color:var(--accent)}
+.foot{text-align:center;border-top:4px double var(--fg);padding-top:.9rem;margin:1.6rem 0 0;font-style:italic;color:var(--muted)}
+@media (min-width:36rem){.cols{grid-template-columns:1fr 1fr;gap:0}.story+.story{border-top:0;padding-top:0;border-left:1px solid var(--fg);padding-left:1.4rem;margin-left:1.4rem}}
+body[data-v=herencia] .orn{height:auto;border:0;background:none;display:flex;justify-content:space-between;font-size:2.1rem;line-height:1;color:var(--accent);padding-bottom:.5rem;border-bottom:2px solid var(--accent);margin-bottom:1.6rem}
+.mes{font:700 .8rem/1 'Fraunces',Georgia,serif;letter-spacing:.16em;text-transform:uppercase;border-top:3px double var(--fg);border-bottom:1px solid var(--fg);padding:.55rem 0;margin:1.8rem 0 0}
+.row{display:grid;grid-template-columns:3.4rem 1fr;gap:.8rem;padding:1rem 0;border-bottom:1px solid rgba(27,24,19,.25);text-decoration:none;color:inherit}
+.row .dt{font:700 .78rem/1.3 'Fraunces',Georgia,serif;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;padding-top:.35rem}
+.row h3{font:700 1.35rem/1.2 'Fraunces',Georgia,serif;margin:.45rem 0 .3rem}
+.row p{margin:0;font-size:.98rem;line-height:1.5;color:var(--muted)}
+.row:hover h3{color:var(--accent)}
+[data-c=valle] .tag{background:#0f766e}[data-c=voces] .tag{background:#141414}[data-c=renacer] .tag{background:#8a5a35}[data-c=guatape] .tag{background:#17708f}
+.sep{text-align:center;color:var(--accent);letter-spacing:.5em;margin:2rem 0}
+body[data-v=voces]{--bg:#ecebe6;--fg:#141414;--muted:#555;--accent:#8b1e1e;--line:#cfcdc4;background:#ecebe6}
+body[data-v=renacer]{--bg:#efe4cc;--fg:#33291f;--muted:#76674f;--accent:#8a5a35;--line:#d9c8a4;background:linear-gradient(#efe4cc 0,#efe4cc 55%,#dfe7ea 100%);background-color:#efe4cc}
+body[data-v=guatape]{--bg:#f3f1ea;--fg:#1c2b33;--muted:#5b6b73;--accent:#17708f;--line:#d5d9d6;background:#f3f1ea}
+body[data-v=voces] .orn{display:flex;justify-content:space-between;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:.5rem 0;font:600 .7rem/1.2 'Fraunces',Georgia,serif;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.6rem}
+body[data-v=renacer] .orn{text-align:center;font-size:1.4rem;letter-spacing:.8em;color:var(--accent);border-bottom:3px dotted var(--accent);padding-bottom:.6rem}
+body[data-v=guatape] .orn{height:20px;border-radius:3px;background:linear-gradient(#2f6f4f 0 50%,#1e88a8 50%)}
 </style>
 </head>
 <body>
 <main>
 <section id="inicio" class="view">
-  <div class="orn" aria-hidden="true"></div>
-  <p class="eyebrow">Escritos</p>
-  <h1>Dane Toledo</h1>
-  <p class="lede">Ensayos y otros textos.</p>
-  <a class="card" data-c="hora" href="#la-hora-que-nadie-oye">
-    <h2>La hora que nadie oye</h2><p>Un Barranquero al borde del agua.</p><p class="meta">Prosa · 2 min de lectura</p>
+  <header class="mast">
+    <div class="top"><span>Edición de noviembre</span><span>2026</span></div>
+    <h1>Dane Toledo</h1>
+    <p>Ensayos y otros textos</p>
+  </header>
+  <a class="lead" data-c="herencia" href="#herencia-de-un-tablero">
+    <span class="tag">Ensayo · 15 de marzo de 2026</span>
+    <h2>Herencia de un tablero</h2>
+    <p class="deck">Una estrella en jaque.</p>
+    <p class="ex">Las piezas tenían nombres de países, pero también de intereses, miedos, memorias que fingían haber quedado atrás.</p>
+    <span class="go">Leer el ensayo →</span>
   </a>
-  <a class="card" data-c="valle" href="#valle-del-zenu">
-    <h2>Valle del Zenú</h2><p>Lo que la historia no supo leer.</p><p class="meta">Ensayo · 3 min de lectura</p>
-  </a>
-  <a class="card" data-c="herencia" href="#herencia-de-un-tablero">
-    <h2>Herencia de un tablero</h2><p>Una estrella en jaque.</p><p class="meta">Ensayo · 2 min de lectura</p>
-  </a>
+  <h2 class="mes" style="margin-top:0;border-top:0">Archivo</h2>
+<h2 class="mes">Marzo 2026</h2>
+<a class="row" data-c="guatape" href="#guatape"><span class="dt">4 mar</span><span><span class="tag">Prosa · 2 min</span><h3>Guatapé</h3><p>De todas las aguas en las que me he bañado, esta es diferente.</p></span></a>
+<h2 class="mes">Febrero 2026</h2>
+<a class="row" data-c="valle" href="#valle-del-zenu"><span class="dt">10 feb</span><span><span class="tag">Ensayo · 3 min</span><h3>Valle del Zenú</h3><p>Las inundaciones no son un hecho inesperado ni un accidente reciente: son la manifestación visible de una historia larga.</p></span></a>
+<h2 class="mes">Noviembre 2025</h2>
+<a class="row" data-c="hora" href="#la-hora-que-nadie-oye"><span class="dt">24 nov</span><span><span class="tag">Prosa · 2 min</span><h3>La hora que nadie oye</h3><p>Era una belleza casi dolorosa: azules que herían, verdes que brillaban como promesas rotas.</p></span></a>
+<h2 class="mes">Marzo 2025</h2>
+<a class="row" data-c="voces" href="#voces-de-cambio"><span class="dt">10 mar</span><span><span class="tag">Ensayo · 3 min</span><h3>Voces de cambio</h3><p>El fin de semana ha pasado y con él, regresamos a la rutina.</p></span></a>
+<a class="row" data-c="renacer" href="#renacer-entre-avalanchas"><span class="dt">6 mar</span><span><span class="tag">Reflexión · 2 min</span><h3>Renacer entre avalanchas</h3><p>La vida puede sentirse como una avalancha, arrastrándonos en su fuerza implacable.</p></span></a>
+  <p class="foot">Cada mes, un escrito nuevo.</p>
 </section>
 <section id="la-hora-que-nadie-oye" class="view">
   <a class="back" href="#inicio">← Todos los escritos</a>
@@ -74,11 +118,11 @@ footer{margin-top:4rem;font-size:.85rem;color:var(--muted);text-align:center}
     <div class="orn" aria-hidden="true"></div>
     <h1>La hora que nadie oye</h1>
     <p class="by">Dane Toledo</p>
-<p>Tenia una cola larga, como un gong marcando un instante sagrado; como si al posarse en aquella rama trazara una hora exacta en el tiempo.<br>El vaivén de su cola era un péndulo tímido, un reloj antiguo, y su canto -si aún podía llamarse canto- sonaba a un eco triste que se perdía entre los árboles, un llamado profundo que parecía recordar algo que ya no está.</p>
-<p>Lo vi allí, parado sobre un árbol al borde del barranco, mirando el agua fluia desde la altura como si aquella corriente pudiera enredar sus lagrimas, lágrimas que no brotaban de sus ojos sino de su voz silenciada.</p>
+<p>Tenía una cola larga, como un gong marcando un instante sagrado; como si al posarse en aquella rama trazara una hora exacta en el tiempo.<br>El vaivén de su cola era un péndulo tímido, un reloj antiguo, y su canto -si aún podía llamarse canto- sonaba a un eco triste que se perdía entre los árboles, un llamado profundo que parecía recordar algo que ya no está.</p>
+<p>Lo vi allí, parado sobre un árbol al borde del barranco, mirando el agua fluía desde la altura como si aquella corriente pudiera enredar sus lágrimas, lágrimas que no brotaban de sus ojos sino de su voz silenciada.</p>
 <p>Era una belleza casi dolorosa: azules que herían, verdes que brillaban como promesas rotas. Pero detrás de ese plumaje perfecto había un peso, una sombra, una culpa que nadie podría ver porque estaba camuflada tras su hermosura. Aquel Barranquero parecía cargar un secreto. Quizás era un recuerdo, quizás la memoria de un error, o tal vez la simple certeza de que no pertenecía a ninguna bandada.</p>
-<p>Ave de soledad, alzaba el pico hacia al cielo como quien busca una respuesta que ya conoce, pero igual insiste en preguntar. ¿Dónde estaría lo que perdió? ¿A quién llamaba con aquel lamento?</p>
-<p>Solo podía recordar, y recordar -en el- era un acto lleno de pesar.</p>
+<p>Ave de soledad, alzaba el pico hacia el cielo como quien busca una respuesta que ya conoce, pero igual insiste en preguntar. ¿Dónde estaría lo que perdió? ¿A quién llamaba con aquel lamento?</p>
+<p>Solo podía recordar, y recordar -en él- era un acto lleno de pesar.</p>
 <p>Entonces comprendí en su quietud, su distancia, su belleza triste:<br>que algunos seres brillan precisamente porque están solos, porque hay heridas que se vuelven luz y culpas que se vuelven canto.</p>
 <p>Y mientras continuaba allí, marcando el tiempo con su cola, dejando que el viento repitiera su pena como un eco interminable, supe que a veces el alma se refleja mejor en los seres que no encajan, en los que habitan la orilla, en los que miran el agua como si en ella también se hundieran sus pensamientos.</p>
   </article>
@@ -111,19 +155,71 @@ footer{margin-top:4rem;font-size:.85rem;color:var(--muted);text-align:center}
 <section id="herencia-de-un-tablero" class="view">
   <a class="back" href="#inicio">← Todos los escritos</a>
   <article>
-    <div class="orn" aria-hidden="true"></div>
+    <div class="orn" aria-hidden="true"><span>♜︎</span><span>♞︎</span><span>♝︎</span><span>♛︎</span><span>♚︎</span><span>♝︎</span><span>♞︎</span><span>♜︎</span></div>
     <h1>Herencia de un tablero</h1>
     <p class="sub">Una estrella en jaque.</p>
     <p class="by">Dane Toledo</p>
-<p>Es el primer lunes del año y no fue una guerra lo que inicio fue una partida de ajedrez. El tablero ya estaba dispuesto desde antes, heredado y un poco gastado por partidas antiguas. Las piezas tenían nombres de países, pero también de intereses, miedos, memorias que fingían haber quedado atrás.</p>
-<p>No fue la reina la que cayó primero.<br>Fue la torre que quedo sola, desprotegida desde adentro.<br>Mientras el tablero se llenaba de miradas externas y discursos cruzados, la estructura que sostenía el juego se quedó sin defensa.</p>
+<p>Es el primer lunes del año y no fue una guerra lo que inició fue una partida de ajedrez. El tablero ya estaba dispuesto desde antes, heredado y un poco gastado por partidas antiguas. Las piezas tenían nombres de países, pero también de intereses, miedos, memorias que fingían haber quedado atrás.</p>
+<p>No fue la reina la que cayó primero.<br>Fue la torre que quedó sola, desprotegida desde adentro.<br>Mientras el tablero se llenaba de miradas externas y discursos cruzados, la estructura que sostenía el juego se quedó sin defensa.</p>
 <p class="pull">No se pierde una partida por ser observado, se pierde cuando en medio de la observación, se descuida lo que sostiene el territorio.</p>
-<p>En el centro del tablero, Venezuela llevaba jugando una partida interna sin resolver. Problemas de casa expuestos al sol, grietas visibles, piezas mal protegidas. Y en ese descuido, la reina quedó vulnerable. No por traición externa. Si no por no haber entendido que hay piezas que no se sacrifican cuando el juego aún no está perdido.</p>
-<p>El rey a caído y no es solo un palacio o Miraflores, lo que en realidad a caído es el control del sistema judicial, la administración de las reglas y es también la capacidad de decidir el poder desde adentro.<br>En el centro del tablero es donde se decide que permites y que castigas. Ahí no se celebra una victoria, se reorganiza el juego.</p>
+<p>En el centro del tablero, Venezuela llevaba jugando una partida interna sin resolver. Problemas de casa expuestos al sol, grietas visibles, piezas mal protegidas. Y en ese descuido, la reina quedó vulnerable. No por traición externa. Sino por no haber entendido que hay piezas que no se sacrifican cuando el juego aún no está perdido.</p>
+<p>El rey ha caído y no es solo un palacio o Miraflores, lo que en realidad ha caído es el control del sistema judicial, la administración de las reglas y es también la capacidad de decidir el poder desde adentro.<br>En el centro del tablero es donde se decide qué permites y qué castigas. Ahí no se celebra una victoria, se reorganiza el juego.</p>
 <p>Esta partida sin embargo no ha sido cerrada oficialmente. El tablero permanece, algunas piezas siguen en pie, desgastadas o inmóviles, pero al fin y al cabo todas observadas. No hay celebración ni acta final, solo un silencio tenso.</p>
 <p>No todas las partidas se pierden cuando una pieza cae. Algunas se defienden cuando quienes juegan no olvidan el sentido del juego.</p>
-<p>Suspendida como un movimiento que, aunque no se ejecuta nos queda la pregunta.<br>Habrá memoria suficiente para recordar que antes del conflicto hubo proyectos, antes de la fragmentación hubo idea y antes del aislamiento hubo una forma distinta de pensarnos.</p>
-<p>Tal vez la partida no termino<br>Tal vez solo está detenida en un punto crítico.<br>Tal vez lo que está el juego no es el rey ni la reina sino la capacidad de reconocer el tablero como propio.</p>
+<p>Suspendida como un movimiento que, aunque no se ejecuta, nos queda la pregunta.<br>¿Habrá memoria suficiente para recordar que antes del conflicto hubo proyectos, antes de la fragmentación hubo idea y antes del aislamiento hubo una forma distinta de pensarnos?</p>
+<p>Tal vez la partida no terminó<br>Tal vez solo está detenida en un punto crítico.<br>Tal vez lo que está en juego no es el rey ni la reina sino la capacidad de reconocer el tablero como propio.</p>
+  </article>
+  <footer>© Dane Toledo. Todos los derechos reservados.</footer>
+</section>
+<section id="voces-de-cambio" class="view">
+  <a class="back" href="#inicio">← Todos los escritos</a>
+  <article>
+    <div class="orn" aria-hidden="true"><span>Medellín, Antioquia</span><span>10 de marzo de 2025</span></div>
+    <h1>Voces de cambio</h1>
+    <p class="sub">Ecos de protestas</p>
+    <p class="by">Dane Toledo</p>
+<p><strong>El fin de semana ha pasado y con él, regresamos a la rutina. Sin embargo, ¿cómo podemos volver a la normalidad tras un evento tan conmovedor como el 8 de marzo? Algo debe haber cambiado después de un fin de semana tan estrepitoso.</strong></p>
+<p>El 8 de marzo es un día que conmemora la lucha por la igualdad de derechos y la justicia. A lo largo de la historia, las mujeres hemos sido estigmatizadas, lo que ha tenido profundas implicaciones en nuestra capacidad para participar plenamente en la sociedad. Gracias a la valentía y perseverancia de muchas, hemos logrado avances significativos. No está mal luchar por un mundo más equitativo, pero, ¿qué fue todo lo que ocurrió este 8 de marzo de 2025? Vandalismo y brutalidad, sí, pero también arte y educación.</p>
+<p>Este año, hay dos enfoques sobre las protestas. Por un lado, celebramos la elección de una mujer como presidenta en un país tan sexista como México, un hito histórico que refleja una parte del feminismo contemporáneo. Este logro simboliza la lucha por los derechos y la igualdad, mostrando que las mujeres pueden alcanzar posiciones de poder que antes se consideraban inalcanzables. Pero, por otro lado, hay un lado oscuro que nos recuerda por qué seguimos luchando. El caso de Sarais González, una joven venezolana de 23 años asesinada, resuena con fuerza. Su hermana, desesperada por encontrarla, escaló el balcón del edificio donde se temía estuviera, y sus desgarradores gritos reflejan el dolor de una familia rota por la violencia.</p>
+<p><strong>Es esencial considerar que las protestas, en todas sus formas, surgen de un contexto de injusticia y frustración. El vandalismo puede ser visto como una manifestación extrema de descontento, un eco de voces que han sido silenciadas durante demasiado tiempo. Sin embargo, debemos preguntarnos si esta forma de expresión realmente logra el cambio deseado o si, por el contrario, perpetúa un ciclo de violencia y desconfianza.</strong></p>
+<p>La verdadera protesta debería ser un llamado a la acción que fomente el diálogo y la comprensión. Es fundamental que nuestras voces sean escuchadas de manera constructiva, utilizando estrategias que no solo visibilicen el problema, sino que también propongan soluciones. La lucha por la igualdad y la justicia debe ir acompañada de un enfoque que inspire a la sociedad a unirse en lugar de dividirse.</p>
+<p>Esta semana, luchamos por Sarais y por todas aquellas que ya no están. Esperamos ver justicia, pero también celebramos a las mujeres que se levantan cada día para contribuir al desarrollo de la sociedad. Las verdaderas protestas las llevamos a cabo todos los días: las enfermeras y médicas que trabajan incansablemente en hospitales, las abogadas que luchan por justicia para quienes han sido silenciadas, las empresarias que dirigen sus compañías y generan empleo para otras mujeres, y aquellas que se quedan en casa, educando y formando a las futuras generaciones.</p>
+<p><strong>Esta semana, al retomar la rutina, lo hacemos con un poco más de sabiduría. Reflexionamos sobre las luchas pasadas y presentes, reconociendo que cada voz cuenta en la búsqueda de un cambio significativo. Al integrar estas lecciones, nos comprometemos a ser agentes de transformación en nuestra comunidad, promoviendo la igualdad y el respeto en cada acción que emprendemos.</strong></p>
+  </article>
+  <footer>© Dane Toledo. Todos los derechos reservados.</footer>
+</section>
+<section id="renacer-entre-avalanchas" class="view">
+  <a class="back" href="#inicio">← Todos los escritos</a>
+  <article>
+    <div class="orn" aria-hidden="true">✿︎ ❄︎ ✿︎</div>
+    <h1>Renacer entre avalanchas</h1>
+    <p class="sub">Un mensaje de esperanza</p>
+    <p class="by">Dane Toledo</p>
+<p>Hoy me desperté con un profundo deseo de compartir un mensaje que resuene en nuestros corazones. Las situaciones que nos rodean, ya sean buenas o malas, felices o tristes, son simplemente eso: “Situaciones”. Nos preparan para enfrentar la vida, y al final, lo único que realmente tenemos es a nosotros mismos y a nuestras emociones.</p>
+<p>He tenido días en los que la esperanza parece lejana, donde las dudas superan a las respuestas, y las preguntas ahogan mi voluntad. En esos momentos, la melancolía puede ser más fuerte que la disciplina. Sin embargo, cada uno de los días ha sido una oportunidad para levantarme y seguir adelante. Porque, al fin y al cabo, el mundo no se detiene por mis tristezas.</p>
+<p>La vida puede sentirse como una avalancha, arrastrándonos en su fuerza implacable. Pero, así como una avalancha puede desbordarse, también puede despejar el camino para nuevas oportunidades.</p>
+<p>Quizás, en algún momento, volveré a encontrar esa tranquilidad que complementa mi felicidad. Tendré la capacidad de cuidar de mis necesidades básicas, de retomar una rutina productiva en todos los aspectos de mi vida y de contribuir con mis conocimientos a la sociedad.</p>
+<p>Hoy, elijo dar gracias. Agradezco por lo bueno y lo no tan bueno, por lo que se me ha dado y por lo que se me ha quitado. Reconozco la bondad en mi espíritu y me recuerdo a mí misma que no todo siempre estará mal. Así como después de una avalancha el paisaje se transforma, yo también puedo transformar mis desafíos en oportunidades. Cuando esta tormenta pase, tomaré mi escoba y limpiaré la suciedad. En esos nuevos espacios, comenzaré a construir mis sueños.</p>
+  </article>
+  <footer>© Dane Toledo. Todos los derechos reservados.</footer>
+</section>
+<section id="guatape" class="view">
+  <a class="back" href="#inicio">← Todos los escritos</a>
+  <article>
+    <div class="orn" aria-hidden="true"></div>
+    <h1>Guatapé</h1>
+    <p class="sub">Escrito a mano en dos servilletas</p>
+    <p class="by">Dane Toledo · A orillas del lago, 4 de marzo de 2026</p>
+<p>De todas las aguas en las que me he bañado, esta es diferente. Agua detenida. Agua pesada. Agua que esconde la muerte de personas que, por la codicia humana, desaparecieron. No por naturaleza. Por mano humana.</p>
+<p>Bajo su superficie no hay solo piedras y tierra. Hay casas, patios que una vez contaron historias. Memorias ahogadas. Hay un pueblo entero que no pudo defenderse cuando el progreso necesitaba un lago.</p>
+<p>Guatapé parece inmenso. Azul turquesa. Rodeado de montañas verdes y casas de descanso. Desde lejos se ve hermosa, pero esa belleza tiene un peso que pesa. El agua cubrió historias y levantó una postal, hoy refugio de gente rica para descansar, una colonia tranquila donde el paisaje parece intacto. Sin embargo, en medio de todo queda la cruz de la antigua iglesia. Como un recordatorio que debajo de esa calma hay un pueblo sumergido.</p>
+<p>Miro el embalse y entiendo que esto no es agua libre. No es agua viva. Es agua retenida. Detenida, obligada a guardar silencio.</p>
+<p>Entre las montañas y las casas lujosas vuelan aves blancas, elegantes. Como si fueran parte de la decoración del lugar. Combinan con el paisaje, pero el agua no las refleja.</p>
+<p>Miro la superficie y no encuentro el cielo, ni el sol ni las nubes. Solo un azul inmóvil, demasiado perfecto. ¿Dónde deberían haber peces? Veo moscas. Donde deberían haber hojas aparecen insectos negros que rompen la quietud. Y en esa quietud noto algo más extraño. ¿Dónde están las hojas flotando?</p>
+<div class="sep" aria-hidden="true">· · ·</div>
+<p>En el agua viva siempre hay hojas amarillas moviéndose en la orilla, girando con la corriente, anunciando que el agua está respirando. Aquí no. El paisaje parece reducido a dos colores, verde y azul. Como si alguien hubiera limpiado el escenario de todo lo que se mueve.</p>
+<p>Estoy parada frente a un pozo de agua, o quizás frente a un pozo de lágrimas disfrazado. La música alrededor no me deja pensar. Las voces no me dejan escuchar. Todo parece hermoso, tranquilito, elegante. Pero esa belleza es superficial. Como si el paisaje estuviera hecho para ser mirado y no recordar lo que quedó abajo.</p>
+<p class="pull">El cielo no se refleja en el agua.<br>Pero yo sí.</p>
   </article>
   <footer>© Dane Toledo. Todos los derechos reservados.</footer>
 </section>
@@ -134,7 +230,7 @@ footer{margin-top:4rem;font-size:.85rem;color:var(--muted);text-align:center}
   function show(){
     var id=(location.hash||'').replace('#','');
     var found=false;
-    var map={'la-hora-que-nadie-oye':'hora','valle-del-zenu':'valle','herencia-de-un-tablero':'herencia'};
+    var map={'la-hora-que-nadie-oye':'hora','valle-del-zenu':'valle','herencia-de-un-tablero':'herencia','voces-de-cambio':'voces','renacer-entre-avalanchas':'renacer','guatape':'guatape'};
     views.forEach(function(v){var on=v.id===id;v.classList.toggle('on',on);if(on)found=true;});
     if(!found){document.getElementById('inicio').classList.add('on');id='inicio';}
     document.body.setAttribute('data-v',map[id]||'inicio');
