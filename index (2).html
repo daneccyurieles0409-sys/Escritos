@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dane Toledo · Escritos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{--bg:#f8f0e1;--fg:#2b2018;--muted:#7b6a58;--accent:#c4502a;--card:#fff8ea;--line:#e8d8bd;margin:0;background:var(--bg);color:var(--fg);font-family:'Lora',Georgia,'Times New Roman',serif;line-height:1.8;font-size:1.1rem;-webkit-text-size-adjust:100%}
+@media (prefers-color-scheme:dark){body[data-v=inicio]{--bg:#1c1511;--fg:#f1e6d3;--muted:#b3a38e;--accent:#f08a5d;--card:#271d17;--line:#3a2d24}}
+body[data-v=hora]{--fg:#e6f0ea;--muted:#8fb3ad;--accent:#52d6c3;--line:#1d4b50;background:linear-gradient(180deg,#0a1f2c 0,#0f3a40 55%,#17574f 100%) fixed;background-color:#0f3a40;line-height:1.95;font-size:1.15rem}
+body[data-v=valle]{--fg:#1d2b27;--muted:#5d6b62;--accent:#0f766e;--card:#fbf5e4;--line:#d9c9a3;background:linear-gradient(#f1e6cb,#e9dcb8);background-color:#f1e6cb}
+body[data-v=herencia]{--bg:#f5f0e6;--fg:#1a1a1a;--muted:#5f5a50;--accent:#b3202a;--card:#fff;--line:#d6cfc0}
+main{max-width:40rem;margin:0 auto;padding:2.5rem 1.4rem 5rem}
+h1,h2,.sub,.eyebrow,.meta{font-family:'Fraunces',Georgia,serif}
+.orn{margin-bottom:2rem}
+body[data-v=inicio] .orn{height:10px;border-radius:6px;background:linear-gradient(90deg,#f2b134 0 33.3%,#1b998b 33.3% 66.6%,#c4502a 66.6%)}
+body[data-v=hora] .orn{height:96px;margin-bottom:.5rem;background:radial-gradient(circle at 86% 45%,rgba(82,214,195,.95) 0 16px,rgba(82,214,195,.2) 17px 44px,transparent 45px)}
+body[data-v=valle] .orn{height:44px;opacity:.85;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='20'%3E%3Cpath d='M0 10 Q20 0 40 10 T80 10' fill='none' stroke='%230f766e' stroke-width='2'/%3E%3C/svg%3E") 0 0 repeat-x,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='20'%3E%3Cpath d='M0 10 Q20 0 40 10 T80 10' fill='none' stroke='%230f766e' stroke-width='2'/%3E%3C/svg%3E") 40px 22px repeat-x}
+body[data-v=herencia] .orn{height:48px;border:2px solid #1a1a1a;background:repeating-conic-gradient(#1a1a1a 0 25%,#f5f0e6 0 50%) 0 0/24px 24px}
+.eyebrow{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:2rem 0 .6rem}
+h1{font-size:clamp(2.1rem,8vw,3rem);line-height:1.1;margin:0 0 .5rem;font-weight:700;letter-spacing:-.01em}
+body[data-v=hora] h1{color:var(--accent)}
+body[data-v=valle] h1{color:#0b4f4a}
+body[data-v=herencia] h1{text-transform:uppercase;letter-spacing:.02em}
+.lede{color:var(--muted);margin:0 0 2.2rem}
+.card{display:block;text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:14px;padding:1.3rem 1.5rem;transition:transform .15s}
+.card+.card{margin-top:1rem}.card:hover{transform:translateY(-2px)}
+.card[data-c=hora]{--card:#0f3a40;--fg:#e6f0ea;--muted:#9fc2bc;--accent:#52d6c3;--line:#1d4b50}
+.card[data-c=valle]{--card:#f1e6cb;--fg:#1d2b27;--muted:#5d6b62;--accent:#0f766e;--line:#d9c9a3}
+.card[data-c=herencia]{--card:#f5f0e6;--fg:#1a1a1a;--muted:#5f5a50;--accent:#b3202a;--line:#d6cfc0}
+.card h2{margin:0 0 .2rem;font-size:1.4rem;line-height:1.25}
+.card p{margin:0;color:var(--muted);font-size:1rem;line-height:1.5}
+.card .meta{margin-top:.7rem;font-size:.85rem;color:var(--accent)}
+.back{display:inline-block;margin-bottom:1.5rem;color:var(--accent);text-decoration:none;font-size:.95rem}
+.back:hover{text-decoration:underline}
+.sub{font-style:italic;color:var(--muted);font-size:1.25rem;margin:0 0 1rem;line-height:1.4}
+.by{margin:0 0 2.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--line);font-size:.95rem;color:var(--muted)}
+article p{margin:0 0 1.2rem}
+.by+p::first-letter{float:left;font:700 3.6rem/.85 'Fraunces',Georgia,serif;padding:.35rem .55rem 0 0;color:var(--accent)}
+.pull{font-family:'Fraunces',Georgia,serif;font-size:1.35rem;line-height:1.5;color:var(--accent);border-left:3px solid var(--accent);padding-left:1rem;margin:2rem 0!important}
+article h2{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .8rem}
+.nota{margin-top:3rem;padding:1.2rem 1.4rem;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:.98rem;color:var(--muted)}
+.nota p{margin:0 0 .9rem}.nota p:last-child{margin:0}
+footer{margin-top:4rem;font-size:.85rem;color:var(--muted);text-align:center}
+.view{display:none}.view.on{display:block}
+</style>
+</head>
+<body>
+<main>
+<section id="inicio" class="view">
+  <div class="orn" aria-hidden="true"></div>
+  <p class="eyebrow">Escritos</p>
+  <h1>Dane Toledo</h1>
+  <p class="lede">Ensayos y otros textos.</p>
+  <a class="card" data-c="hora" href="#la-hora-que-nadie-oye">
+    <h2>La hora que nadie oye</h2><p>Un Barranquero al borde del agua.</p><p class="meta">Prosa · 2 min de lectura</p>
+  </a>
+  <a class="card" data-c="valle" href="#valle-del-zenu">
+    <h2>Valle del Zenú</h2><p>Lo que la historia no supo leer.</p><p class="meta">Ensayo · 3 min de lectura</p>
+  </a>
+  <a class="card" data-c="herencia" href="#herencia-de-un-tablero">
+    <h2>Herencia de un tablero</h2><p>Una estrella en jaque.</p><p class="meta">Ensayo · 2 min de lectura</p>
+  </a>
+</section>
+<section id="la-hora-que-nadie-oye" class="view">
+  <a class="back" href="#inicio">← Todos los escritos</a>
+  <article>
+    <div class="orn" aria-hidden="true"></div>
+    <h1>La hora que nadie oye</h1>
+    <p class="by">Dane Toledo</p>
+<p>Tenia una cola larga, como un gong marcando un instante sagrado; como si al posarse en aquella rama trazara una hora exacta en el tiempo.<br>El vaivén de su cola era un péndulo tímido, un reloj antiguo, y su canto -si aún podía llamarse canto- sonaba a un eco triste que se perdía entre los árboles, un llamado profundo que parecía recordar algo que ya no está.</p>
+<p>Lo vi allí, parado sobre un árbol al borde del barranco, mirando el agua fluia desde la altura como si aquella corriente pudiera enredar sus lagrimas, lágrimas que no brotaban de sus ojos sino de su voz silenciada.</p>
+<p>Era una belleza casi dolorosa: azules que herían, verdes que brillaban como promesas rotas. Pero detrás de ese plumaje perfecto había un peso, una sombra, una culpa que nadie podría ver porque estaba camuflada tras su hermosura. Aquel Barranquero parecía cargar un secreto. Quizás era un recuerdo, quizás la memoria de un error, o tal vez la simple certeza de que no pertenecía a ninguna bandada.</p>
+<p>Ave de soledad, alzaba el pico hacia al cielo como quien busca una respuesta que ya conoce, pero igual insiste en preguntar. ¿Dónde estaría lo que perdió? ¿A quién llamaba con aquel lamento?</p>
+<p>Solo podía recordar, y recordar -en el- era un acto lleno de pesar.</p>
+<p>Entonces comprendí en su quietud, su distancia, su belleza triste:<br>que algunos seres brillan precisamente porque están solos, porque hay heridas que se vuelven luz y culpas que se vuelven canto.</p>
+<p>Y mientras continuaba allí, marcando el tiempo con su cola, dejando que el viento repitiera su pena como un eco interminable, supe que a veces el alma se refleja mejor en los seres que no encajan, en los que habitan la orilla, en los que miran el agua como si en ella también se hundieran sus pensamientos.</p>
+  </article>
+  <footer>© Dane Toledo. Todos los derechos reservados.</footer>
+</section>
+<section id="valle-del-zenu" class="view">
+  <a class="back" href="#inicio">← Todos los escritos</a>
+  <article>
+    <div class="orn" aria-hidden="true"></div>
+    <h1>Valle del Zenú</h1>
+    <p class="sub">Lo que la historia no supo leer.</p>
+    <p class="by">Dane Toledo</p>
+<p>Lo que hoy ocurre en Montería suele nombrarse como una crisis ambiental o un desastre natural. Sin embargo, esa forma de decirlo oculta más de lo que explica. Las inundaciones no son un hecho inesperado ni un accidente reciente: son la manifestación visible de una historia larga, escrita mucho antes de que la ciudad llevara ese nombre.</p>
+<p>El valle del Sinú es una llanura de inundación por naturaleza; vio durante siglos cómo el río creció, se desbordó y regresó a su cauce siguiendo ciclos que no eran tan caóticos, sino profundamente ordenados. Las zonas que hoy aparecen bajo el agua cumplían una función vital: recibirla, contenerla y devolverla cuando el nivel del río descendía.</p>
+<p class="pull">El agua no invadía el territorio; el territorio estaba hecho para el agua.</p>
+<p>Mucho antes de la fundación de Montería, este espacio fue habitado por el pueblo Zenú, una sociedad que no solo comprendía el comportamiento del río, sino que dialogaba con él. Los Zenú desarrollaron uno de los sistemas hidráulicos más avanzados de América prehispánica: redes de canales, drenajes y campos elevados que permitían manejar los excesos de agua sin destruir los cultivos ni alterar el equilibrio del ecosistema. Para ellos, la inundación no era un enemigo, sino parte del ritmo natural de la vida.</p>
+<p>Esta relación con el territorio fue quebrada de manera progresiva. Desde la colonia y con mayor fuerza a partir del siglo XIX, los territorios Zenú fueron apropiados como folclor o curiosidad histórica. No se trató solo de un despojo material, sino de algo más profundo: se borró una forma de habitar el mundo. A eso se le puede llamar violencia epistémica.</p>
+<p>Durante el crecimiento económico moderno se impuso un modelo que ya no necesitaba un territorio vivo, sino tierra seca. La ganadería extensiva, la agroindustria y la consolidación de élites terratenientes en Córdoba comenzaron a ver los humedales, las ciénagas y los ciclos naturales del río como obstáculos. La solución fue drenarlos, rellenarlos, intentar domesticar el agua. No porque no se supiera lo que se estaba perdiendo, sino porque no convenía saberlo.</p>
+<p>El crecimiento urbano de Montería no fue inocente ni improvisado. Se construyó sobre antiguos humedales, ignorando deliberadamente la memoria hidrológica del territorio. Decir hoy que la ciudad se inundó porque “llovió demasiado” es una forma cómoda de negar la responsabilidad histórica. Es más fácil atribuirlo al clima que aceptar que se edificó donde no se debía.</p>
+<p>El agua, sin embargo, no olvida. No se venga ni castiga: recuerda. Regresa a los lugares que siempre le pertenecieron y revela las fracturas de un modelo que confundió dominar con convivir. La naturaleza nunca pidió obediencia ciega; pidió escucha, ritmo y lugar. El problema es que la mano humana moderna no quiere convivir: quiere acelerar, poseer y controlar.</p>
+<p>Esto no es un castigo, es algo más incómodo: la consecuencia lógica. La naturaleza no necesita reconocernos como superiores para seguir existiendo; somos nosotros quienes no sobrevivimos sin ella. La historia ya estaba escrita en el territorio. Que no supiéramos leerla no significa que no estuviera ahí.</p>
+    <aside class="nota"><h2>Nota del autor</h2>
+<p>Este ensayo no pretende narrar una noticia ni ofrecer una clase de historia. Es una reflexión escrita desde la observación del territorio y la memoria que persiste en él. Las ideas aquí expuestas se apoyan en procesos históricos documentados -como la relación del pueblo Zenú con el agua en el valle del Sinú- y en conceptos críticos como la violencia epistémica, pero no buscan agotarlos ni explicarlos de manera exhaustiva.</p>
+<p>Este texto dialoga con una investigación narrativa más amplia en curso, donde el agua no es solo un elemento natural sino un archivo vivo, una forma de memoria que atraviesa generaciones y territorios. Desde ese lugar, escribir se vuelve una manera de escuchar lo que la geografía ha intentado decir incluso cuando no supimos o no quisimos leerla.</p>
+<p>Más que concluir, este ensayo invita a mirar más allá de las explicaciones inmediatas y a reconocer que muchos de los hechos que hoy nos parecen extraordinarios han estado inscritos, desde hace mucho tiempo, en la tierra y en el agua. Que esa historia haya estado escrita no significa que siempre hayamos sabido leerla.</p>
+    </aside>
+  </article>
+  <footer>© Dane Toledo. Todos los derechos reservados.</footer>
+</section>
+<section id="herencia-de-un-tablero" class="view">
+  <a class="back" href="#inicio">← Todos los escritos</a>
+  <article>
+    <div class="orn" aria-hidden="true"></div>
+    <h1>Herencia de un tablero</h1>
+    <p class="sub">Una estrella en jaque.</p>
+    <p class="by">Dane Toledo</p>
+<p>Es el primer lunes del año y no fue una guerra lo que inicio fue una partida de ajedrez. El tablero ya estaba dispuesto desde antes, heredado y un poco gastado por partidas antiguas. Las piezas tenían nombres de países, pero también de intereses, miedos, memorias que fingían haber quedado atrás.</p>
+<p>No fue la reina la que cayó primero.<br>Fue la torre que quedo sola, desprotegida desde adentro.<br>Mientras el tablero se llenaba de miradas externas y discursos cruzados, la estructura que sostenía el juego se quedó sin defensa.</p>
+<p class="pull">No se pierde una partida por ser observado, se pierde cuando en medio de la observación, se descuida lo que sostiene el territorio.</p>
+<p>En el centro del tablero, Venezuela llevaba jugando una partida interna sin resolver. Problemas de casa expuestos al sol, grietas visibles, piezas mal protegidas. Y en ese descuido, la reina quedó vulnerable. No por traición externa. Si no por no haber entendido que hay piezas que no se sacrifican cuando el juego aún no está perdido.</p>
+<p>El rey a caído y no es solo un palacio o Miraflores, lo que en realidad a caído es el control del sistema judicial, la administración de las reglas y es también la capacidad de decidir el poder desde adentro.<br>En el centro del tablero es donde se decide que permites y que castigas. Ahí no se celebra una victoria, se reorganiza el juego.</p>
+<p>Esta partida sin embargo no ha sido cerrada oficialmente. El tablero permanece, algunas piezas siguen en pie, desgastadas o inmóviles, pero al fin y al cabo todas observadas. No hay celebración ni acta final, solo un silencio tenso.</p>
+<p>No todas las partidas se pierden cuando una pieza cae. Algunas se defienden cuando quienes juegan no olvidan el sentido del juego.</p>
+<p>Suspendida como un movimiento que, aunque no se ejecuta nos queda la pregunta.<br>Habrá memoria suficiente para recordar que antes del conflicto hubo proyectos, antes de la fragmentación hubo idea y antes del aislamiento hubo una forma distinta de pensarnos.</p>
+<p>Tal vez la partida no termino<br>Tal vez solo está detenida en un punto crítico.<br>Tal vez lo que está el juego no es el rey ni la reina sino la capacidad de reconocer el tablero como propio.</p>
+  </article>
+  <footer>© Dane Toledo. Todos los derechos reservados.</footer>
+</section>
+</main>
+<script>
+(function(){
+  var views=document.querySelectorAll('.view');
+  function show(){
+    var id=(location.hash||'').replace('#','');
+    var found=false;
+    var map={'la-hora-que-nadie-oye':'hora','valle-del-zenu':'valle','herencia-de-un-tablero':'herencia'};
+    views.forEach(function(v){var on=v.id===id;v.classList.toggle('on',on);if(on)found=true;});
+    if(!found){document.getElementById('inicio').classList.add('on');id='inicio';}
+    document.body.setAttribute('data-v',map[id]||'inicio');
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show);
+  show();
+})();
+</script>
+</body>
+</html>
